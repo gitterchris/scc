@@ -14,6 +14,7 @@ module.exports = {
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Suniga Construction',
+			template: './src/index.html',
 		}),
 	],
 	module: {
@@ -31,7 +32,7 @@ module.exports = {
 				type: 'asset/resource',
 			},
 			{
-				test: /\.m?js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
@@ -39,7 +40,10 @@ module.exports = {
 						presets: ['@babel/preset-env'],
 					}
 				}
-			}
+			},
 		],
 	},
+	resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+  }
 };
