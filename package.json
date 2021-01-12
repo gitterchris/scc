@@ -1,0 +1,39 @@
+{
+  "name": "scc",
+  "version": "1.0.0",
+  "description": "Suniga Construction website",
+  "private": true,
+  "repository": "git@github.com:gitterchris/scc.git",
+  "author": "Chris Ababan",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config config/webpack.js",
+    "build-dev": "webpack serve --open --config config/webpack.local.js",
+    "lint": "eslint --ext .js --ext .jsx src",
+    "lint-fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4",
+    "html-webpack-plugin": "^4.5.1",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3"
+  }
+}
