@@ -44,6 +44,10 @@ module.exports = {
 		],
 	},
 	resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+		extensions: ['.js', '.jsx', '.json'],
+		alias: {
+      '../../theme.config$': path.join(__dirname, "../semantic-ui/theme.config"),
+      "../semantic-ui/site": path.join(__dirname, "../semantic-ui/site")
+    }
   }
 };

@@ -8,7 +8,6 @@ import PreDesigned from './pre-designed';
 import Services from './services';
 import Team from './team';
 import Footer from './footer';
-import 'semantic-ui-css/semantic.min.css'
 
 const App = () => (
   <div>

@@ -14,4 +14,16 @@ module.exports = merge(common, {
 		port: 3000,
 		host: 'localhost',
 	},
+	module: {
+		rules: [
+			{
+				test: /\.less$/,
+				use: [
+					{ loader: 'style-loader' },
+					{ loader: 'css-loader' },
+					{ loader: 'less-loader' },
+				],
+			}
+		],
+	},
 });
