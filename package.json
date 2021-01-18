@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config config/webpack.js",
-    "build-dev": "webpack serve --open --config config/webpack.local.js",
+    "build-dev": "webpack serve --open 'Google Chrome' --config config/webpack.local.js",
     "lint": "eslint --ext .js --ext .jsx src",
     "lint-fix": "yarn lint --fix"
   },

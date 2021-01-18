@@ -1,0 +1,30 @@
+#app {
+  height: 100%;
+}
+
+.app {
+  min-height: 100%;
+}
+
+.app__header {
+  background-color: #b91715;
+  padding: 1.26em 0;
+}
+
+.app__header h1,
+.app__header a,
+.app__header--more  {
+  color: white !important;
+}
+
+.app__header--menu {
+  margin-top: 0 !important;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app__header--menu > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

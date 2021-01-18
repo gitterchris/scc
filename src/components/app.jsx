@@ -6,11 +6,13 @@ import About from './about';
 import Projects from './projects';
 import PreDesigned from './pre-designed';
 import Services from './services';
+import Clients from './clients';
+import Certificates from './certificates';
 import Team from './team';
 import Footer from './footer';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Header />
     <Switch>
       <Route
@@ -32,6 +34,14 @@ const App = () => (
       <Route
         path="/team"
         component={Team}
+      />
+      <Route
+        path="/clients"
+        component={Clients}
+      />
+      <Route
+        path="/certificates"
+        component={Certificates}
       />
       <Route
         exact

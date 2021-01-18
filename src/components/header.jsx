@@ -1,61 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Menu, Dropdown, Header as SemanticHeader } from 'semantic-ui-react';
 
-const Header = () => (
-  <div id="header-wrapper">
-    <div className="container">
-      <header id="page-header">
-        <h1>
-          <a
-            id="logo"
-            href="/"
+const Header = () => {
+  const [activeItem, setActiveItem] = useState('home');
+  const menuItems = [
+    {
+      to: '/', name: 'home', label: 'Home', isActive: activeItem === 'home',
+    },
+    {
+      to: '/about', name: 'about', label: 'About', isActive: activeItem === 'about',
+    },
+    {
+      to: '/projects', name: 'projects', label: 'Projects', isActive: activeItem === 'projects',
+    },
+    {
+      to: '/pre-designed', name: 'pre-designed', label: 'Pre-Designed', isActive: activeItem === 'pre-designed',
+    },
+    {
+      to: '/services', name: 'services', label: 'Services', isActive: activeItem === 'services',
+    },
+    {
+      to: '/team', name: 'team', label: 'Team', isActive: activeItem === 'team',
+    },
+  ];
+
+  return (
+    <div className="app__header">
+      <header
+        className="app__header--menu"
+      >
+        <Menu
+          text
+        >
+          <Menu.Item
+            as={NavLink}
+            to="/"
+            name="header"
           >
-            <b>Suniga</b>
-            {' '}
-            Construction Company
-          </a>
-        </h1>
-        <nav id="nav">
-          <ul>
-            <li className="current_page_item">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/projects">Projects</NavLink>
-            </li>
-            <li>
-              <NavLink to="/pre-designed">Pre-Designed</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services">Services</NavLink>
-            </li>
-            <li>
-              <NavLink to="/team">Team</NavLink>
-            </li>
-            <li>
-              <a
-                href=""
-                className="arrow"
+            <SemanticHeader
+              as="h1"
+            >
+              Suniga Construction Company
+            </SemanticHeader>
+          </Menu.Item>
+
+          <Menu.Menu position="right">
+            {menuItems.map(({
+              to, name, label, isActive,
+            }) => (
+              <Menu.Item
+                as={NavLink}
+                to={to}
+                name={name}
+                active={isActive}
+                onClick={(e, { name: itemName }) => setActiveItem(itemName)}
               >
-                More
-              </a>
-              <ul>
-                <li>
-                  <NavLink to="/clients">Clients</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/certificates">Certificates</NavLink>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+                {label}
+              </Menu.Item>
+            ))}
+            <Dropdown
+              item
+              className="app__header--more"
+              text="More"
+            >
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  as={NavLink}
+                  to="/clients"
+                >
+                  Clients
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={NavLink}
+                  to="/certificates"
+                >
+                  Certificates
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Menu>
+        </Menu>
       </header>
     </div>
-  </div>
-);
+  );
+};
 
 export default Header;
