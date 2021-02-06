@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header as SemanticHeader } from 'semantic-ui-react';
+import './header.css';
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState('home');
@@ -28,7 +29,7 @@ const Header = () => {
   return (
     <div className="app__header">
       <header
-        className="app__header--menu"
+        className="app__header--menu middle"
       >
         <Menu
           text
@@ -50,6 +51,7 @@ const Header = () => {
               to, name, label, isActive,
             }) => (
               <Menu.Item
+                key={name}
                 as={NavLink}
                 to={to}
                 name={name}

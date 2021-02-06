@@ -1,0 +1,37 @@
+.home-page {
+  background: #2f2f2f url(overlay.png);
+}
+
+.home-page__container {
+  padding: 1em 0;
+}
+
+.each-slide > div {
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  height: 550px;
+}
+
+.each-slide .home-page__slide-show--caption {
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  background: rgba(185,23,21,0.9);
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.home-page__slide-show--caption .line-1 {
+  font-size: 2em;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.home-page__slide-show--caption .line-2 {
+  font-size: 1em;
+  display: block;
+  font-weight: normal;
+}
