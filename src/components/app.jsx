@@ -9,7 +9,7 @@ import Services from './services';
 import Clients from './clients';
 import Certificates from './certificates';
 import Team from './team';
-import Footer from './footer';
+import { Footer } from './footer';
 
 const App = () => (
   <div className="app">
